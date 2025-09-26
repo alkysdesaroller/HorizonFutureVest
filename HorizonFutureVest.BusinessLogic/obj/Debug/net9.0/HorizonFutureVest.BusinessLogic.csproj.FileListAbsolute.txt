@@ -1,0 +1,16 @@
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\bin\Debug\net9.0\HorizonFutureVest.BusinessLogic.deps.json
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\bin\Debug\net9.0\HorizonFutureVest.BusinessLogic.dll
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\bin\Debug\net9.0\HorizonFutureVest.BusinessLogic.pdb
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\bin\Debug\net9.0\HorizonFutureVest.Persistence.dll
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\bin\Debug\net9.0\HorizonFutureVest.Persistence.pdb
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\obj\Debug\net9.0\HorizonFutureVest.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\obj\Debug\net9.0\HorizonFutureVest.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\obj\Debug\net9.0\HorizonFutureVest.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\obj\Debug\net9.0\HorizonFutureVest.BusinessLogic.AssemblyInfo.cs
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\obj\Debug\net9.0\HorizonFutureVest.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\obj\Debug\net9.0\HorizonFutureVest.BusinessLogic.sourcelink.json
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\obj\Debug\net9.0\HorizonF.8165B747.Up2Date
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\obj\Debug\net9.0\HorizonFutureVest.BusinessLogic.dll
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\obj\Debug\net9.0\refint\HorizonFutureVest.BusinessLogic.dll
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\obj\Debug\net9.0\HorizonFutureVest.BusinessLogic.pdb
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.BusinessLogic\obj\Debug\net9.0\ref\HorizonFutureVest.BusinessLogic.dll

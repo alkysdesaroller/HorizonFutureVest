@@ -1,0 +1,15 @@
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\bin\Debug\net9.0\HorizonFutureVest.Persistence.deps.json
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\bin\Debug\net9.0\HorizonFutureVest.Persistence.runtimeconfig.json
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\bin\Debug\net9.0\HorizonFutureVest.Persistence.dll
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\bin\Debug\net9.0\HorizonFutureVest.Persistence.pdb
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\obj\Debug\net9.0\HorizonFutureVest.Persistence.csproj.AssemblyReference.cache
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\obj\Debug\net9.0\HorizonFutureVest.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\obj\Debug\net9.0\HorizonFutureVest.Persistence.AssemblyInfoInputs.cache
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\obj\Debug\net9.0\HorizonFutureVest.Persistence.AssemblyInfo.cs
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\obj\Debug\net9.0\HorizonFutureVest.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\obj\Debug\net9.0\HorizonFutureVest.Persistence.sourcelink.json
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\obj\Debug\net9.0\HorizonFutureVest.Persistence.dll
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\obj\Debug\net9.0\refint\HorizonFutureVest.Persistence.dll
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\obj\Debug\net9.0\HorizonFutureVest.Persistence.pdb
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\obj\Debug\net9.0\HorizonFutureVest.Persistence.genruntimeconfig.cache
+C:\Users\alna7\OneDrive\Desktop\HorizonFutureVest\HorizonFutureVest.Persistence\obj\Debug\net9.0\ref\HorizonFutureVest.Persistence.dll
