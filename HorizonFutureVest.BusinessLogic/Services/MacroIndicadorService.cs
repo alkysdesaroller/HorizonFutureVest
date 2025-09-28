@@ -1,6 +1,7 @@
 ﻿using HorizonFutureVest.BusinessLogic.DTOs;
 using HorizonFutureVest.BusinessLogic.Interfaces;
 using HorizonFutureVest.Persistence.DbContextHorizon;
+using HorizonFutureVest.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace HorizonFutureVest.BusinessLogic.Services;
@@ -12,21 +13,21 @@ public class MacroIndicadorService(HorizonContext context) : IMacroIndicadorServ
         var macroIndicadores = await context.MacroIndicadores
             .OrderBy(mi => mi.Nombre)
             .ToListAsync();
-                
-              return macroIndicadores.Select(mi => new MacroIndicadorDto
-            {
-                Id = mi.Id,
-                Nombre = mi.Nombre,
-                Peso = mi.Peso,
-                EsMejorMasAlto = mi.EsMejorMasAlto
-            });
+
+        return macroIndicadores.Select(mi => new MacroIndicadorDto
+        {
+            Id = mi.Id,
+            Nombre = mi.Nombre,
+            Peso = mi.Peso,
+            EsMejorMasAlto = mi.EsMejorMasAlto
+        });
     }
 
     public async Task<MacroIndicadorDto> GetByIdAsync(int id)
     {
         var macroIndicador = await context.MacroIndicadores.FindAsync(id);
         if (macroIndicador == null) return null!;
-        
+
         return new MacroIndicadorDto
         {
             Id = macroIndicador.Id,
@@ -36,43 +37,75 @@ public class MacroIndicadorService(HorizonContext context) : IMacroIndicadorServ
         };
     }
 
-    public Task<MacroIndicadorDto> CreateAsync(MacroIndicadorDto dto)
+    public async Task<MacroIndicadorDto> CreateAsync(MacroIndicadorDto dto)
     {
-        throw new NotImplementedException();
+        var macroIndicador = new MacroIndicador
+        {
+            Nombre = dto.Nombre,
+            Peso = dto.Peso,
+            EsMejorMasAlto = dto.EsMejorMasAlto
+        };
+        context.MacroIndicadores.Add(macroIndicador);
+        await context.SaveChangesAsync();
+
+        dto.Id = macroIndicador.Id;
+        return dto;
     }
 
-    public Task<MacroIndicadorDto> UpdateAsync(MacroIndicadorDto dto)
+    public async Task<MacroIndicadorDto> UpdateAsync(MacroIndicadorDto dto)
     {
-        throw new NotImplementedException();
+        var macroIndicador = await context.MacroIndicadores.FindAsync(dto.Id);
+        if (macroIndicador == null) return null!;
+        
+        macroIndicador.Nombre = dto.Nombre;
+        macroIndicador.Peso = dto.Peso;
+        macroIndicador.EsMejorMasAlto = dto.EsMejorMasAlto;
+
+        await context.SaveChangesAsync();
+        return dto;
     }
 
-    public Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+       var macroIndicador = await context.MacroIndicadores.FindAsync(id);
+       if (macroIndicador == null) return false;
+       
+       context.MacroIndicadores.Remove(macroIndicador);
+       await context.SaveChangesAsync();
+       return true;
     }
 
-    public Task<bool> ExistsAsync(int id)
+    public async Task<bool> ExistsAsync(int id)
     {
-        throw new NotImplementedException();
+    return await context.MacroIndicadores.AnyAsync(m => m.Id == id);
     }
 
-    public Task<decimal> GetPesosSumAsync()
+    public async Task<decimal> GetPesosSumAsync()
     {
-        throw new NotImplementedException();
+        return await context.MacroIndicadores.SumAsync(m => m.Peso); 
     }
 
-    public Task<decimal> GetPesosExceptoAsync(int excludeId)
+    public async Task<decimal> GetPesosExceptoAsync(int excludeId)
     {
-        throw new NotImplementedException();
+        return await context.MacroIndicadores
+            .Where(m => m.Id != excludeId)
+            .SumAsync(m => m.Peso);
     }
 
-    public Task<bool> PuedeCrearNuevoAsync()
+    public async Task<bool> PuedeCrearNuevoAsync()
     {
-        throw new NotImplementedException();
+        var sumaPesos = await GetPesosSumAsync();
+        return sumaPesos < 1.0m;
     }
 
-    public Task<bool> ValidarPesoAsync(decimal nuevoPeso, int? excludeId = null)
+    public async Task<bool> ValidarPesoAsync(decimal nuevoPeso, int? excludeId = null)
     {
-        throw new NotImplementedException();
+        decimal sumaActual;
+        if (excludeId.HasValue)
+            sumaActual = await GetPesosExceptoAsync(excludeId.Value);
+        else
+            sumaActual = await GetPesosSumAsync();
+        
+        return (sumaActual + nuevoPeso) <= 1.0m;
     }
 }
