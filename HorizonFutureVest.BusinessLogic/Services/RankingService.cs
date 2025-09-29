@@ -214,7 +214,7 @@ namespace HorizonFutureVest.BusinessLogic.Services
 
     class PaisElegible
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
         public string? Nombre { get; set; }
         public string? CodigoIso { get; set; }
         public Dictionary<int, decimal> Indicadores { get; set; } = new Dictionary<int, decimal>();
