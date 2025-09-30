@@ -2,7 +2,7 @@
 
 namespace HorizonFutureVest.Controllers;
 
-public class RankingController : Controller
+public class IndicadorPorPaisController_ : Controller
 {
     // GET
     public IActionResult Index()

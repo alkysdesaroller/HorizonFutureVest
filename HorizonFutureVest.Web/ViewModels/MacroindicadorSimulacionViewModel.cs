@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HorizonFutureVest.ViewModels;
 
-public class MacroIndicadorSimulacion
+public class MacroIndicadorSimulacionViewModel
 {
     public int Id { get; set; }
     public int MacroindicadorId { get; set; }
