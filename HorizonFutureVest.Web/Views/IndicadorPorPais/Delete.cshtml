@@ -1,0 +1,45 @@
+﻿@model HorizonFutureVest.ViewModels.IndicadorPorPaisViewModel
+@{
+    ViewData["Title"] = "Eliminar Indicador";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2 class="mb-4 text-danger"><i class="bi bi-trash"></i> Eliminar Indicador</h2>
+
+        <div class="card border-danger">
+            <div class="card-body">
+                <div class="alert alert-warning">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    ¿Está seguro que desea eliminar este indicador?
+                </div>
+
+                <dl class="row">
+                    <dt class="col-sm-4">País:</dt>
+                    <dd class="col-sm-8"><strong>@Model.NombrePais</strong></dd>
+
+                    <dt class="col-sm-4">Macroindicador:</dt>
+                    <dd class="col-sm-8">@Model.NombreMacroindicador</dd>
+
+                    <dt class="col-sm-4">Valor:</dt>
+                    <dd class="col-sm-8"><span class="badge bg-info">@Model.Valor.ToString("N2")</span></dd>
+
+                    <dt class="col-sm-4">Año:</dt>
+                    <dd class="col-sm-8"><span class="badge bg-secondary">@Model.Year</span></dd>
+                </dl>
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="d-grid gap-2 d-md-flex">
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-x-circle"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-check-circle"></i> Sí, Eliminar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

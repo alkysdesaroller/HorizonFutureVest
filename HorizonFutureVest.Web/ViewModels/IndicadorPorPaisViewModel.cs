@@ -22,7 +22,7 @@ public class IndicadorPorPaisViewModel
     [Required(ErrorMessage = "El año es requerido")]
     [Range(1900, 9999, ErrorMessage = "Año inválido")]
     [Display(Name = "Año")]
-    public int Ano { get; set; }
+    public int Year { get; set; }
         
     // Para dropdowns
     public SelectList Paises { get; set; } = null!;
@@ -34,6 +34,6 @@ public class IndicadorPorPaisViewModel
         
     // Para filtros
     public int? FiltrarPorPaisId { get; set; }
-    public int? FiltrarPorAno { get; set; }
+    public int? FiltrarPorYear { get; set; }
     public SelectList PaisesFiltro { get; set; } = null!;
 }

@@ -1,0 +1,44 @@
+﻿@model MacroIndicadorSimulacionViewModel
+@{
+    ViewData["Title"] = "Eliminar de Simulación";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2 class="mb-4 text-danger"><i class="bi bi-trash"></i> Eliminar de Simulación</h2>
+
+        <div class="card border-danger">
+            <div class="card-body">
+                <div class="alert alert-warning">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    ¿Está seguro que desea eliminar este macroindicador de la simulación?
+                </div>
+
+                <dl class="row">
+                    <dt class="col-sm-4">Macroindicador:</dt>
+                    <dd class="col-sm-8"><strong>@Model.NombreMacroindicador</strong></dd>
+
+                    <dt class="col-sm-4">Peso en Simulación:</dt>
+                    <dd class="col-sm-8"><span class="badge bg-info">@Model.PesoSimulacion.ToString("P2")</span></dd>
+                </dl>
+
+                <div class="alert alert-info">
+                    <i class="bi bi-info-circle"></i>
+                    <strong>Nota:</strong> Esto solo lo eliminará de la simulación. El macroindicador seguirá existiendo en el sistema.
+                </div>
+
+                <form asp-action="Eliminar" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="d-grid gap-2 d-md-flex">
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-x-circle"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-check-circle"></i> Sí, Eliminar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

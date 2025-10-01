@@ -1,0 +1,59 @@
+﻿@model HorizonFutureVest.ViewModels.MacroIndicadorViewModel
+@{
+    ViewData["Title"] = "Editar Macroindicador";
+    var pesoDisponible = 1.0m - Model.SumaPesosActual;
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2 class="mb-4"><i class="bi bi-pencil"></i> Editar Macroindicador</h2>
+
+        <div class="alert alert-info">
+            <i class="bi bi-info-circle"></i>
+            Peso disponible (sin contar este indicador): <strong>@pesoDisponible.ToString("P2")</strong>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="Edit" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="PesoOriginal" />
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Nombre" class="form-label"></label>
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Peso" class="form-label"></label>
+                        <input asp-for="Peso" class="form-control" type="number" step="0.0001" min="0.0001" max="@pesoDisponible" />
+                        <span asp-validation-for="Peso" class="text-danger"></span>
+                        <small class="form-text text-muted">Peso actual: @Model.PesoOriginal.ToString("P2")</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input asp-for="EsMejorMasAlto" class="form-check-input" type="checkbox" />
+                            <label asp-for="EsMejorMasAlto" class="form-check-label"></label>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex">
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Volver
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Guardar Cambios
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
