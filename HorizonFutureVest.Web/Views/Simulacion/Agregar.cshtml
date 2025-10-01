@@ -1,0 +1,64 @@
+﻿@model MacroIndicadorSimulacionViewModel
+@{
+    ViewData["Title"] = "Agregar Macroindicador a Simulación";
+    var pesoDisponible = ViewBag.PesoDisponible as decimal?;
+    var sumaPesosActual = ViewBag.SumaPesosActual as decimal?;
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2 class="mb-4"><i class="bi bi-plus-circle"></i> Agregar Macroindicador a Simulación</h2>
+
+        @if (pesoDisponible.HasValue)
+        {
+            <div class="alert alert-info">
+                <i class="bi bi-info-circle"></i>
+                <strong>Suma actual de pesos:</strong> @sumaPesosActual?.ToString("P2")<br/>
+                <strong>Peso disponible:</strong> @pesoDisponible.Value.ToString("P2")
+            </div>
+        }
+
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="Agregar" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="MacroindicadorSeleccionadoId" class="form-label">Macroindicador</label>
+                        <select asp-for="MacroindicadorSeleccionadoId" asp-items="Model.MacroindicadoresDisponibles" class="form-select">
+                            <option value="">-- Seleccione un macroindicador --</option>
+                        </select>
+                        <span asp-validation-for="MacroindicadorSeleccionadoId" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NuevoPeso" class="form-label">Peso para Simulación</label>
+                        <input asp-for="NuevoPeso" class="form-control" type="number" step="0.0001" min="0.0001" max="@pesoDisponible" />
+                        <span asp-validation-for="NuevoPeso" class="text-danger"></span>
+                        <small class="form-text text-muted">
+                            Valor entre 0.0001 y @(pesoDisponible.HasValue ? pesoDisponible.Value.ToString("F4") : "1.0000")
+                        </small>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <strong>Nota:</strong> El peso asignado aquí es independiente del peso configurado en el mantenimiento de macroindicadores.
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex">
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Volver
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-plus-circle"></i> Agregar a Simulación
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,31 +1,93 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
 
 body {
-  margin-bottom: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 8px;
 }
+
+.card-header {
+    border-radius: 8px 8px 0 0 !important;
+}
+
+.table-ranking {
+    background: white;
+}
+
+.ranking-position {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.scoring-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+.footer {
+    background: #f8f9fa;
+    padding: 1rem 2rem;
+    margin-top: auto;
+    text-align: center;
+    
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.form-control, .form-select {
+    border-radius: 5px;
+}
+
+.alert {
+    border-radius: 5px;
+}
+
+.progress {
+    border-radius: 10px;
+}
+
+.badge {
+    padding: 0.5em 0.8em;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f3f5;
+    cursor: pointer;
+}
+
+.card-header.bg-primary,
+.card-header.bg-secondary,
+.card-header.bg-success,
+.card-header.bg-info,
+.card-header.bg-warning,
+.card-header.bg-danger {
+    color: white;
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+

@@ -1,0 +1,44 @@
+﻿@model HorizonFutureVest.ViewModels.PaisViewModel
+@{
+    ViewData["Title"] = "Editar País";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2 class="mb-4"><i class="bi bi-pencil"></i> Editar País</h2>
+
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="Edit" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Nombre" class="form-label"></label>
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="CodigoIso" class="form-label"></label>
+                        <input asp-for="CodigoIso" class="form-control" maxlength="3" />
+                        <span asp-validation-for="CodigoIso" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex">
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Volver
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Guardar Cambios
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

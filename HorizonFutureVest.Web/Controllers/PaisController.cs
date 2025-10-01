@@ -1,6 +1,5 @@
 ﻿using HorizonFutureVest.BusinessLogic.DTOs;
 using HorizonFutureVest.BusinessLogic.Interfaces;
-using HorizonFutureVest.BusinessLogic.Services;
 using HorizonFutureVest.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,9 +7,9 @@ namespace HorizonFutureVest.Controllers;
 
 public class PaisController : Controller
 {
-    private readonly PaisService  _service;
+    private readonly IPaisService  _service;
     
-    public PaisController(PaisService service)
+    public PaisController(IPaisService service)
     {
         _service = service;
     }
@@ -76,9 +75,9 @@ public class PaisController : Controller
     public async Task<IActionResult> Edit(PaisViewModel model)
     {
         if  (!ModelState.IsValid)
-            {
+        {
             return View(model);
-            }
+        }
 
         if (await _service.CodigoIsoExistsAsync(model.CodigoIso, model.Id))
         {
