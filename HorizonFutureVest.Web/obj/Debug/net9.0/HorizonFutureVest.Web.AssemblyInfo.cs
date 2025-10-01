@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HorizonFutureVest.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b4bae955faa9d5de319a361af375f763640a69a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f28367a0ed84b9e3a49937397b29c833cdd59fdd")]
 [assembly: System.Reflection.AssemblyProductAttribute("HorizonFutureVest.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HorizonFutureVest.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
