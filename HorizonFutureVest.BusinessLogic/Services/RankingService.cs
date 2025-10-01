@@ -8,10 +8,10 @@ namespace HorizonFutureVest.BusinessLogic.Services
 {
     public class RankingService : IRankingService
     {
-        private readonly ConfiguracionTasasService _configuracionTasasService;
+        private readonly IConfiguracionTasasService _configuracionTasasService;
         private readonly HorizonContext _context;
 
-        public RankingService(HorizonContext context, ConfiguracionTasasService configuracionTasasService)
+        public RankingService(HorizonContext context, IConfiguracionTasasService configuracionTasasService)
         {
             _configuracionTasasService = configuracionTasasService;
             _context = context;

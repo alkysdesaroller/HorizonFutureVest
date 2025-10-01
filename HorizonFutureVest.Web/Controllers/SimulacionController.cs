@@ -1,5 +1,4 @@
-﻿using HorizonFutureVest.BusinessLogic.DTOs;
-using HorizonFutureVest.BusinessLogic.Interfaces;
+﻿using HorizonFutureVest.BusinessLogic.Interfaces;
 using HorizonFutureVest.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -23,7 +22,6 @@ public class SimulacionController : Controller
         var macroIndicadoresSimulacion = await _simulacionService.GetMacroindicadoresSimulacionAsync();
         var years = await _rankingService.GetYearConIndicadoresAsync();
         var yearMasReciente = years.Any() ? years.First() : DateTime.Now.Year;
-
         var viewModel = new SimulacionViewModel
         {
             MacroIndicadoresSimulacion = macroIndicadoresSimulacion.Select(m => new MacroIndicadorSimulacionViewModel
@@ -129,8 +127,8 @@ public class SimulacionController : Controller
             Resultados = resultado.Select(r => new RankingResultViewModel
             {
                 NombrePais = r.NombrePais,
-                CodigoPais = r.CodigoIso,         // DTO -> VM
-                Puntaje = r.Scoring,              // DTO -> VM
+                CodigoPais = r.CodigoIso,
+                Puntaje = r.Scoring,
                 TasaRetornoEstimada = r.TasaRetornoEstimada,
                 Posicion = r.Posicion
             }).ToList()
@@ -141,7 +139,33 @@ public class SimulacionController : Controller
 
     public async Task<IActionResult> ResultadosSimulacion(int year)
     {
-        // Si llamas directo a esta acción, sin TempData, podrías cargar de DB
+        return RedirectToAction(nameof(Index));
+    }
+
+    // LÓGICA FALTANTE: GET Eliminar - Vista de confirmación
+    public async Task<IActionResult> Eliminar(int id)
+    {
+        var simulacion = await _simulacionService.GetSimulacionByIdAsync(id);
+        if (simulacion == null)
+            return NotFound();
+
+        var viewModel = new MacroIndicadorSimulacionViewModel
+        {
+            Id = simulacion.Id,
+            NombreMacroindicador = simulacion.NombreMacroindicador,
+            PesoSimulacion = simulacion.PesoSimulacion
+        };
+
+        return View(viewModel);
+    }
+
+    // LÓGICA FALTANTE: POST Eliminar - Ejecuta la eliminación
+    [HttpPost]
+    [ActionName("Eliminar")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> EliminarConfirmado(int id)
+    {
+        await _simulacionService.EliminarMacroIndicadorAsync(id);
         return RedirectToAction(nameof(Index));
     }
 
